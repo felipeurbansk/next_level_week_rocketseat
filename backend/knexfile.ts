@@ -12,7 +12,7 @@ module.exports = {
       tableName: "migrations",
     },
     seeds: {
-      directory: path.resolve(__dirname, "database", "seeds"),
+      directory: path.resolve(__dirname, "src", "database", "seeds"),
     },
     useNullAsDefault: true,
   },

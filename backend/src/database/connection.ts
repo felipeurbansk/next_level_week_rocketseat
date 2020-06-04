@@ -7,3 +7,5 @@ const connection = Knex({
     filename: path.resolve(__dirname, "database.sqlite"),
   },
 });
+
+export default connection;
