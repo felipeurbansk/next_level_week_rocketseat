@@ -1,11 +1,17 @@
 import express from "express";
-import connection from "./database/connection";
+
+import PointsController from "./controllers/PointsController";
+import ItemsController from "./controllers/ItemsController";
 
 const route = express.Router();
 
-route.get("/", async (request, response) => {
-  const items = await connection("items").select("*");
-  response.json({ items });
-});
+const pointsController = new PointsController();
+const itemsController = new ItemsController();
+
+route.get("/items", itemsController.index);
+
+route.post("/points", pointsController.create);
+route.get("/points", pointsController.index);
+route.get("/points/:id", pointsController.show);
 
 export default route;
